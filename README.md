@@ -1,2 +1,2 @@
-# ecommerce
-A simple E-commerce web application
+# e-commerce
+a simple version of jumia
