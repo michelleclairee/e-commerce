@@ -13,11 +13,18 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import include,url
+from django.conf import settings
+from django.urls import path,include
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url('Zumia/',include('ZumiaShop.urls'))
+    path('admin/', admin.site.urls),
+    path('accounts/', include ('allauth.urls')),
+    path('',include('ZumiaShop.urls'))
     
 ]
+
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns += [path('__debug__/', include(debug_toolbar.urls))]
