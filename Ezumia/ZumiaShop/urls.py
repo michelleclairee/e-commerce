@@ -8,7 +8,7 @@ from .views import (
 app_name = 'ZumiaShop'
 
 urlpatterns = [
-    path('', HomeView.as_view, name='home'),
+    path('', HomeView.as_view(), name='home'),
     path('checkout/', checkout, name='checkout'),
     path('products/', products, name='products')
 ]
