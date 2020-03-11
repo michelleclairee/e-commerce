@@ -115,21 +115,20 @@
 
             <div class="mb-3">
               <a href="">
-                <span class="badge purple mr-1">Category 2</span>
+                <span class="badge purple mr-1">{{object.get_category_display}}</span>
               </a>
-              <a href="">
-                <span class="badge blue mr-1">New</span>
-              </a>
-              <a href="">
-                <span class="badge red mr-1">Bestseller</span>
-              </a>
+             
             </div>
 
             <p class="lead">
-              <span class="mr-1">
-                <del>$200</del>
+              {% if object.discount_price %}
+                <span class="mr-1">
+                <del>${{ object.price }}</del>
               </span>
-              <span>$100</span>
+              <span> ${{ object.discount_price }}</span>
+              {% else %}
+              <span>${{ object.price }}</span>
+              {% endif %}
             </p>
 
             <p class="lead font-weight-bold">Description</p>
@@ -216,11 +215,11 @@
     <!--Call to action-->
     <div class="pt-4">
       <a class="btn btn-outline-white" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank"
-        role="button">Download MDB
+        role="button">ZUMIA
         <i class="fas fa-download ml-2"></i>
       </a>
-      <a class="btn btn-outline-white" href="https://mdbootstrap.com/education/bootstrap/" target="_blank" role="button">Start
-        free tutorial
+      <a class="btn btn-outline-white" href="https://mdbootstrap.com/education/bootstrap/" target="_blank" role="button">
+        ECOMMERCE
         <i class="fas fa-graduation-cap ml-2"></i>
       </a>
     </div>
@@ -266,8 +265,8 @@
 
     <!--Copyright-->
     <div class="footer-copyright py-3">
-      © 2019 Copyright:
-      <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> MDBootstrap.com </a>
+      © 2020:
+      <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> ZUMIA ECOMMERCE </a>
     </div>
     <!--/.Copyright-->
 
