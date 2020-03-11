@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect, get_object_or_404
 from .models import Item, OrderItem, Order
 from .forms import CheckoutForm
 from django.http import HttpResponse
@@ -29,6 +29,8 @@ class ItemDetailView(DetailView):
     template_name = "product-page.html"
     
     
-
+def add_to_cart(request, pk ):
+    item = get_object_or_404(Item, pk=pk )
+    order_item = OrderItem.create(item=item)
 
    
